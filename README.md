@@ -1,4 +1,4 @@
-# Project 1 - *Name of App Here*
+# Project 1 - Flixster
 
 Flixster shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
 
@@ -10,9 +10,9 @@ Time spent: **X** hours spent in total
 The following **required** functionality is completed:
 
 * [x] User can **scroll through current movies** from the Movie Database API
-* [ ] For each movie displayed, user can see the following details:
+* [x] For each movie displayed, user can see the following details:
   * [x] Title, Poster Image, Overview (Portrait mode)
-  * [ ] Title, Backdrop Image, Overview (Landscape mode)
+  * [x] Title, Backdrop Image, Overview (Landscape mode)
 * [ ] Layout is optimized with the [ViewHolder](http://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView#improving-performance-with-the-viewholder-pattern) pattern.
 * [ ] User can **pull-to-refresh** popular stream to get the latest movies.
 * [ ] Display a nice default [placeholder graphic](http://guides.codepath.com/android/Displaying-Images-with-the-Picasso-Library#configuring-picasso) for each image during loading.
