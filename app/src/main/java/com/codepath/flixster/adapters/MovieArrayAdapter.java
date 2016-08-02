@@ -69,7 +69,10 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
               .placeholder(R.drawable.ic_movie_black_72dp)
               .into(viewHolder.ivImage);
     } else {
-      Picasso.with(getContext()).load(movie.getBackdropPath()).into(viewHolder.ivImage);
+      Picasso.with(getContext())
+              .load(movie.getBackdropPath())
+              .placeholder(R.drawable.ic_movie_black_72dp)
+              .into(viewHolder.ivImage);
     }
 
     // return the view
