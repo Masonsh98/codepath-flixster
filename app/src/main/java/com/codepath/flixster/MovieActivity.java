@@ -25,6 +25,7 @@ public class MovieActivity extends AppCompatActivity {
   ListView lvItems;
 
   private SwipeRefreshLayout swipeContainer;
+  private AsyncHttpClient client;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +33,13 @@ public class MovieActivity extends AppCompatActivity {
     setContentView(R.layout.activity_movie);
     swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
 
-    final AsyncHttpClient client = new AsyncHttpClient();
+    client = new AsyncHttpClient();
 
     // Set up refresh listener
     swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
       @Override
       public void onRefresh() {
-        fetchMoviesAsync(client);
+        fetchMoviesAsync();
       }
     });
 
@@ -52,10 +53,10 @@ public class MovieActivity extends AppCompatActivity {
     movies = new ArrayList<>();
     movieAdapter = new MovieArrayAdapter(this, movies);
     lvItems.setAdapter(movieAdapter);
-    fetchMoviesAsync(client);
+    fetchMoviesAsync();
   }
 
-  public void fetchMoviesAsync(AsyncHttpClient client) {
+  public void fetchMoviesAsync() {
     String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     client.get(url, new JsonHttpResponseHandler() {
       JSONArray movieJsonResults = null;
