@@ -36,12 +36,7 @@ public class MovieActivity extends AppCompatActivity {
     client = new AsyncHttpClient();
 
     // Set up refresh listener
-    swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-      @Override
-      public void onRefresh() {
-        fetchMoviesAsync();
-      }
-    });
+    swipeContainer.setOnRefreshListener(() -> fetchMoviesAsync());
 
     // configure the refreshing colors
     swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
