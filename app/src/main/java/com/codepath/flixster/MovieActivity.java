@@ -1,5 +1,6 @@
 package com.codepath.flixster;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.codepath.flixster.adapters.MovieArrayAdapter;
+import com.codepath.flixster.databinding.ActivityMovieBinding;
 import com.codepath.flixster.models.Movie;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -26,12 +28,13 @@ public class MovieActivity extends AppCompatActivity {
 
   private SwipeRefreshLayout swipeContainer;
   private AsyncHttpClient client;
+  private ActivityMovieBinding binding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_movie);
-    swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_movie);
+    swipeContainer = binding.swipeContainer;
 
     client = new AsyncHttpClient();
 
