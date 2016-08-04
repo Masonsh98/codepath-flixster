@@ -1,0 +1,41 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="movie"
+            type="com.codepath.flixster.models.Movie"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivMovieImage"
+            app:imageUrl="@{movie.backdropPath}"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvTitle"
+            android:layout_alignParentTop="true"
+            android:text="@{movie.originalTitle}"
+            android:layout_toRightOf="@+id/ivMovieImage"
+            android:layout_toEndOf="@+id/ivMovieImage"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvOverview"
+            android:text="@{movie.overview}"
+            android:layout_toRightOf="@+id/ivMovieImage"
+            android:layout_toEndOf="@+id/ivMovieImage"
+            android:layout_below="@+id/tvTitle"/>
+    </RelativeLayout>
+</layout>
