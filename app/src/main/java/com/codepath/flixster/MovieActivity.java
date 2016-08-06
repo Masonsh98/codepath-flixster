@@ -1,5 +1,6 @@
 package com.codepath.flixster;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -52,6 +53,7 @@ public class MovieActivity extends AppCompatActivity {
     movieAdapter = new MovieArrayAdapter(this, movies);
     lvItems.setAdapter(movieAdapter);
     fetchMoviesAsync();
+    setupListViewListener();
   }
 
   public void fetchMoviesAsync() {
@@ -79,6 +81,17 @@ public class MovieActivity extends AppCompatActivity {
 
         Log.d("Debug", "Fetch movies error: " + throwable.toString());
       }
+    });
+  }
+
+  private final int REQUEST_CODE = 20;
+
+  public void setupListViewListener() {
+    lvItems.setOnItemClickListener((adapter, item, pos, id) -> {
+        Intent i = new Intent(MovieActivity.this, PlayTrailerActivity.class);
+        Movie movie = (Movie) adapter.getItemAtPosition(pos);
+        i.putExtra("id", movie.getId());
+        startActivityForResult(i, REQUEST_CODE);
     });
   }
 }
