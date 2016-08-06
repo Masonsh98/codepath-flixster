@@ -2,8 +2,13 @@
 
 Flixster shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
 
-[WIP]
-Time spent: 6 hours spent in total
+Time spent:
+- Monday: 5 hours
+- Tuesday: 5 hours
+- Wednesday: 5 hours
+- Thursday: 6 hours
+- Friday: 2.5 hours
+Total: 24.5
 
 ## User Stories
 
@@ -22,7 +27,8 @@ The following **optional** features are implemented:
 * [ ] Improved the user interface through styling and coloring.
 * [ ] Allow user to view details of the movie including ratings and popularity within a separate activity or dialog fragment.
 * [x] When viewing a popular movie (i.e. a movie voted for more than 5 stars) the video should show the full backdrop image as the layout.  Uses [Heterogenous ListViews](http://guides.codepath.com/android/Implementing-a-Heterogenous-ListView) or [Heterogenous RecyclerView](http://guides.codepath.com/android/Heterogenous-Layouts-inside-RecyclerView) to show different layouts.
-* [ ] Allow video trailers to be played in full-screen using the YouTubePlayerView.
+* [-] Allow video trailers to be played in full-screen using the YouTubePlayerView.
+    * [x] User can click on a movie poster and a full-screen YouTubePlayerView will appear. I didn't finish this feature, my progress is in the Youtube Branch
     * [ ] Overlay a play icon for videos that can be played.
     * [ ] More popular movies should start a separate activity that plays the video immediately.
     * [ ] Less popular videos rely on the detail page should show ratings and a YouTube preview.
@@ -34,7 +40,7 @@ The following **additional** features are implemented:
 
 * [x] Enable Lambda syntax and use for event handling
 
-## [wip]Video Walkthrough
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
